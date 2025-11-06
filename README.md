@@ -1,2 +1,3 @@
-# iac_core
+# README
+
 This repo created by Terraform
