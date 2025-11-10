@@ -6,14 +6,10 @@ terraform {
   source = "${get_terragrunt_dir()}/.."
 }
 
-dependency "network" {
-  config_path = ""
-}
-
 inputs = {
   region            = local.region
-  vpc_id            = "dependency.network.outputs.vpc_id"
-  igw_id            = "dependency.network.outputs.igw_id"
+  vpc_id            = try(local.vpc_id, "")
+  igw_id            = try(local.igw_id, "")
   availability_zone = "eu-central-1a"
 
   common_tags = local.common_tags
