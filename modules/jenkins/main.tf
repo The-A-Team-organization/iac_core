@@ -1,12 +1,3 @@
-locals {
-  github_cidrs = [
-    "192.30.252.0/22",
-    "185.199.108.0/22",
-    "140.82.112.0/20",
-    "143.55.64.0/20"
-  ]
-}
-
 resource "aws_subnet" "jenkins_subnet" {
   vpc_id            = var.vpc_id
   cidr_block        = var.subnet_cidr
@@ -43,10 +34,15 @@ resource "aws_security_group" "jenkins_sg" {
   vpc_id = var.vpc_id
 
   ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = locals.github_cidrs
+    from_port = 8080
+    to_port   = 8080
+    protocol  = "tcp"
+    cidr_blocks = [
+      "192.30.252.0/22",
+      "185.199.108.0/22",
+      "140.82.112.0/20",
+      "143.55.64.0/20"
+    ]
   }
 
   egress {
