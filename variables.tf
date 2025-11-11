@@ -37,7 +37,6 @@ variable "jenkins" {
     ami           = string
     instance_type = string
     subnet_cidr   = string
-    allowed_cidrs = list(string)
   })
 }
 
@@ -46,7 +45,6 @@ variable "sonarqube" {
     ami           = string
     instance_type = string
     subnet_cidr   = string
-    allowed_cidrs = list(string)
   })
 }
 

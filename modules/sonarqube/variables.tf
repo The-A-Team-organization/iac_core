@@ -4,7 +4,7 @@ variable "region" {
 }
 
 variable "vpc_id" {
-  description = "The VPC ID where Jenkins will be deployed"
+  description = "The VPC ID where Sonarqube will be deployed"
   type        = string
 }
 
@@ -30,7 +30,7 @@ variable "ami" {
 
 
 variable "instance_type" {
-  description = "The instance type for the Jenkins EC2 instance"
+  description = "The instance type for the Sonarqube EC2 instance"
   type        = string
 }
 
@@ -42,7 +42,7 @@ variable "common_tags" {
     "Project"     = "Illuminati"
     "Environment" = "stage"
     "Repository"  = "https://github.com/The-A-Team-organization/iac_core"
-    "Module"      = "jenkins"
+    "Module"      = "sonarqube"
   }
 }
 
