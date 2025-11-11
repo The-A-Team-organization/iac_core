@@ -10,6 +10,7 @@ module "jenkins" {
   ami               = var.jenkins.ami
   instance_type     = var.jenkins.instance_type
   subnet_cidr       = var.jenkins.subnet_cidr
+  user_data         = templatefile("${path.module}/templates/user_data.tftpl", {})
 }
 
 module "sonarqube" {

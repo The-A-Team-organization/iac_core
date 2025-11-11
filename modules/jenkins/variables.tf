@@ -51,3 +51,9 @@ variable "subnet_cidr" {
   description = "The CIDR block defining the IP address range for the Jenkins subnet"
   type        = string
 }
+
+variable "user_data" {
+  description = "User data script to initialize Jenkins instance (bash script)"
+  type        = string
+  default     = ""
+}
