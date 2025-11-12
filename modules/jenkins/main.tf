@@ -97,6 +97,12 @@ resource "aws_instance" "jenkins" {
   iam_instance_profile   = aws_iam_instance_profile.jenkins_profile.name
   user_data              = var.user_data
 
+  root_block_device {
+    volume_size           = 15
+    volume_type           = "gp3"
+    delete_on_termination = true
+  }
+
   tags = merge(var.common_tags, {
     Name = "jenkins_instance"
   })
