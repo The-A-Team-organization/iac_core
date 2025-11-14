@@ -4,3 +4,4 @@
 *.tfplan
 local.github_cidrs
 
+.idea/
