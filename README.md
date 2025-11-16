@@ -24,7 +24,6 @@ These modules are not meant to be applied directly via terraform apply. Instead,
 - main.tf – integrates individual modules into a complete stage stack definition
 
 - modules/ – reusable Terraform modules:
-
   - jenkins/
 
   - sonarqube/
@@ -38,10 +37,10 @@ These modules are not meant to be applied directly via terraform apply. Instead,
 ### Usage
 
 If you want to test a module in isolation:
+
 ```
 terraform init
 terraform plan
 ```
 
 However, in normal workflow, these modules are consumed by Terragrunt from a higher-level repository [iac_terragrunt](https://github.com/The-A-Team-organization/iac-terragrunt).
-
