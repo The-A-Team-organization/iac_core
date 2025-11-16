@@ -1,1 +1,7 @@
-**/*.tfstate
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+local.github_cidrs
+
+.idea/
